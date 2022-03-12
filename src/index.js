@@ -1,3 +1,17 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const element = React.createElement(
+  'div',
+  { a: 5, b: 10, children: 'The World is REACT' },
+  <h1>Hello React</h1>,
+  <p>Element child</p>,
+);
+
+console.log(element);
+
+ReactDOM.render(element, document.querySelector('#root'));
+
 // ===============================================
 // import React from 'react';
 // import ReactDOM from 'react-dom';

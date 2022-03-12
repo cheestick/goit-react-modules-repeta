@@ -1,16 +1,18 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 
-const element = React.createElement(
-  'div',
-  { a: 5, b: 10, children: 'The World is REACT' },
-  <h1>Hello React</h1>,
-  <p>Element child</p>,
+const jsxH = <h1>Hello JSX</h1>;
+const jsxP = <p>jsx child element</p>;
+
+const jsxEl = (
+  <div>
+    {jsxH}
+    {jsxP}
+  </div>
 );
 
-console.log(element);
+console.log(jsxEl);
 
-ReactDOM.render(element, document.querySelector('#root'));
+ReactDOM.render(jsxEl, document.querySelector('#root'));
 
 // ===============================================
 // import React from 'react';

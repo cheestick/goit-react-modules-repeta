@@ -1,7 +1,13 @@
-import PropTypes from 'prop-types'
-import defaultImage from './default.jpg'
+import PropTypes from 'prop-types';
+import defaultImage from './default.jpg';
 
-export default function Painting({ imgUrl = defaultImage, title, author = 'unknown', price, quantity }) {
+export default function Painting({
+  imgUrl = defaultImage,
+  title,
+  author = 'unknown',
+  price,
+  quantity,
+}) {
   return (
     <div>
       <img src={imgUrl} alt={title} width="480" />
@@ -17,9 +23,9 @@ export default function Painting({ imgUrl = defaultImage, title, author = 'unkno
 }
 
 Painting.propTypes = {
-    imgUrl: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.object.isRequired,
-    price: PropTypes.number.isRequired,
-    quantity: PropTypes.number.isRequired,
-}
+  imgUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.object.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+};

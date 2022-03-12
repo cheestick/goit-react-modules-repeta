@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 
-function Section({ title }) {
-  return <div>{title && <h2>{title}</h2>}</div>;
+function Section({ title, children }) {
+  return (
+    <div>
+      {title && <h2>{title}</h2>}
+      {children}
+    </div>
+  );
 }
 
 Section.propTypes = {

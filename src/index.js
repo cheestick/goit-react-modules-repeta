@@ -4,15 +4,15 @@ import paintings from './paintings.json';
 const data = paintings[0];
 
 function Painting(props) {
-  console.log(props);
+  const { url, title, author, price } = props;
   return (
     <div>
-      <img src={props.url} alt={props.title} width="480" />
-      <h2>{props.title}</h2>
+      <img src={url} alt={title} width="480" />
+      <h2>{title}</h2>
       <p>
-        Автор: <a href={props.author.url}>{props.author.tag}</a>
+        Автор: <a href={author.url}>{author.tag}</a>
       </p>
-      <p>Цена: {props.price} кредитов</p>
+      <p>Цена: {price} кредитов</p>
       <p>Доступность: заканчивается или есть в наличии</p>
       <button type="button">Добавить в корзину</button>
     </div>

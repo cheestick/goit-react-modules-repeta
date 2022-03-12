@@ -1,33 +1,7 @@
 import ReactDOM from 'react-dom';
-import paintings from './paintings.json';
+import App from './App';
 
-const data = paintings[0];
-
-function Painting(props) {
-  const { url, title, author, price } = props;
-  return (
-    <div>
-      <img src={url} alt={title} width="480" />
-      <h2>{title}</h2>
-      <p>
-        Автор: <a href={author.url}>{author.tag}</a>
-      </p>
-      <p>Цена: {price} кредитов</p>
-      <p>Доступность: заканчивается или есть в наличии</p>
-      <button type="button">Добавить в корзину</button>
-    </div>
-  );
-}
-
-ReactDOM.render(
-  <Painting
-    url={data.url}
-    title={data.title}
-    author={data.author}
-    price={data.price}
-  />,
-  document.querySelector('#root'),
-);
+ReactDOM.render(<App />, document.querySelector('#root'));
 
 // ===============================================
 // import React from 'react';

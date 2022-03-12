@@ -1,18 +1,33 @@
 import ReactDOM from 'react-dom';
+import paintings from './paintings.json';
 
-const jsxH = <h1>Hello JSX</h1>;
-const jsxP = <p>jsx child element</p>;
+const data = paintings[0];
 
-const jsxEl = (
-  <div>
-    {jsxH}
-    {jsxP}
-  </div>
+function Painting(props) {
+  console.log(props);
+  return (
+    <div>
+      <img src={props.url} alt={props.title} width="480" />
+      <h2>{props.title}</h2>
+      <p>
+        Автор: <a href={props.author.url}>{props.author.tag}</a>
+      </p>
+      <p>Цена: {props.price} кредитов</p>
+      <p>Доступность: заканчивается или есть в наличии</p>
+      <button type="button">Добавить в корзину</button>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <Painting
+    url={data.url}
+    title={data.title}
+    author={data.author}
+    price={data.price}
+  />,
+  document.querySelector('#root'),
 );
-
-console.log(jsxEl);
-
-ReactDOM.render(jsxEl, document.querySelector('#root'));
 
 // ===============================================
 // import React from 'react';

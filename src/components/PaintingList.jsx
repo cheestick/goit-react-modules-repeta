@@ -6,13 +6,7 @@ function PaintingList({ items }) {
     <ul>
       {items.map(itemData => (
         <li key={itemData.id}>
-          <Painting
-            imgUrl={itemData.url}
-            title={itemData.title}
-            author={itemData.author}
-            price={itemData.price}
-            quantity={itemData.quantity}
-          />
+          <Painting {...itemData} />
         </li>
       ))}
     </ul>
@@ -28,3 +22,9 @@ PaintingList.propTypes = {
 };
 
 export default PaintingList;
+
+// url={itemData.url}
+// title={itemData.title}
+// author={itemData.author}
+// price={itemData.price}
+// quantity={itemData.quantity}

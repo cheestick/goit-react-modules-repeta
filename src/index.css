@@ -22,3 +22,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.box.big {
+  width: 250px;
+  height: 250px;
+}
+
+.box.red {
+  background-color: #33bbdd;
+}

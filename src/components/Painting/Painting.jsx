@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Painting.css';
+import s from './Painting.module.css';
 import defaultImage from './default.jpg';
 
 export default function Painting({
@@ -10,7 +10,7 @@ export default function Painting({
   quantity,
 }) {
   return (
-    <div className="Painting">
+    <div className={s.container}>
       <img src={url} alt={title} width="480" />
       <h2>{title}</h2>
       <p>

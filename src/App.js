@@ -10,7 +10,10 @@ export default function App() {
   return (
     <div>
       <ColorPicker options={colorPickerOptions} />
-      <Alert text="ALERT! Check something wrong." />
+      <Alert text="ALERT! Default type" />
+      <Alert text="ALERT! Success type." type="success" />
+      <Alert text="ALERT! Warning type." type="warning" />
+      <Alert text="ALERT! Error type." type="error" />
       {/* <Section title="Top of the week">
         <PaintingList items={paintings} />
       </Section>

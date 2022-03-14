@@ -2,13 +2,14 @@
 // import Section from './components/Section';
 import ColorPicker from './components/ColorPicker/ColorPicker';
 import Alert from './components/Alert/Alert';
+import Container from './components/Container/Container';
 import 'modern-normalize/modern-normalize.css';
 // import paintings from './paintings.json';
 import colorPickerOptions from './colorPickerOptions';
 
 export default function App() {
   return (
-    <div>
+    <Container>
       <ColorPicker options={colorPickerOptions} />
       <Alert text="ALERT! Default type" />
       <Alert text="ALERT! Success type." type="success" />
@@ -18,6 +19,6 @@ export default function App() {
         <PaintingList items={paintings} />
       </Section>
       <Section /> */}
-    </div>
+    </Container>
   );
 }

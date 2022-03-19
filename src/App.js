@@ -1,18 +1,12 @@
 import { Component } from "react";
-
+import Form from "./components/Form";
 import "./App.css";
 import initialTodos from "./todos.json";
 
 class App extends Component {
   state = {
     todos: initialTodos,
-    inputValue: "input value",
     filter: "",
-  };
-
-  handleInputChange = (event) => {
-    console.log(event.currentTarget.value);
-    this.setState({ inputValue: event.currentTarget.value });
   };
 
   deleteToDo = (todoId) => {
@@ -28,11 +22,7 @@ class App extends Component {
     return (
       <>
         <h1>React Forms</h1>
-        <input
-          type="text"
-          onChange={this.handleInputChange}
-          value={this.state.inputValue}
-        />
+        <Form />
       </>
     );
   }

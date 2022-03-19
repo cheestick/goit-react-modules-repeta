@@ -13,11 +13,21 @@ class Form extends Component {
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.props.onSubmit(this.state);
+
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ name: "", tag: "" });
+  };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} autoComplete="off">
         <label>
           Name
           <input

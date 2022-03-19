@@ -15,6 +15,10 @@ class App extends Component {
     }));
   };
 
+  formSubmitHandler = (data) => {
+    console.log(data);
+  };
+
   render() {
     const { todos, filter } = this.state;
     const totalTodoCount = todos.length;
@@ -22,7 +26,7 @@ class App extends Component {
     return (
       <>
         <h1>React Forms</h1>
-        <Form />
+        <Form onSubmit={this.formSubmitHandler} />
       </>
     );
   }

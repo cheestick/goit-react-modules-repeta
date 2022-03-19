@@ -1,6 +1,10 @@
 import { Component } from "react";
+import shortid from "shortid";
 
 class Form extends Component {
+  nameInputId = shortid.generate();
+  tagInputId = shortid.generate();
+
   state = {
     name: "",
     tag: "",
@@ -28,18 +32,20 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} autoComplete="off">
-        <label>
+        <label htmlFor={this.nameInputId}>
           Name
           <input
+            id={this.nameInputId}
             type="text"
             name="name"
             value={this.state.name}
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        <label htmlFor={this.tagInputId}>
           Nickname
           <input
+            id={this.tagInputId}
             type="text"
             name="tag"
             value={this.state.tag}

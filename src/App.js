@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import initialTodos from "./todos.json";
+
+class App extends Component {
+  state = {
+    todos: initialTodos,
+    inputValue: "input value",
+    filter: "",
+  };
+
+  handleInputChange = (event) => {
+    console.log(event.currentTarget.value);
+    this.setState({ inputValue: event.currentTarget.value });
+  };
+
+  deleteToDo = (todoId) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.filter((todo) => todo.id !== todoId),
+    }));
+  };
+
+  render() {
+    const { todos, filter } = this.state;
+    const totalTodoCount = todos.length;
+
+    return (
+      <>
+        <h1>React Forms</h1>
+        <input
+          type="text"
+          onChange={this.handleInputChange}
+          value={this.state.inputValue}
+        />
+      </>
+    );
+  }
 }
 
 export default App;
